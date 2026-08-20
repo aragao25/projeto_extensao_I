@@ -6,20 +6,25 @@
     <link rel="stylesheet" href="login.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="login">
         <h2>Login</h2>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Senha">
 
-        <div class="links">
-            <label>
-                <input type="checkbox" style="width: auto; margin-right: 5px">Lembre-me
-            </label>
-            <a href="#">Esqueceu sua senha?</a>
-        </div>
-        <button class="botao-login">Login</button>
-        <p style="font-size: 12px; margin-top: 15px">Ainda não tem um cadastro? <a href="#">Registre-se</a></p>
+        <form id="form-usuario">
+            <input type="text" placeholder="Usuário">
+            <input type="password" placeholder="Senha">
+
+            <div class="links">
+                <label class="lembrar-me">
+                    <input type="checkbox" id="lembrar">Lembre-me
+                </label>
+                <a href="#" class="esqueci-senha">Esqueceu sua senha?</a>
+            </div>
+            <button class="botao-login">Login</button>
+        </form>
+        <p class="registro">
+            Ainda não tem um cadastro? <a href="#" class="link-registro">Registre-se</a></p>
     </div>
 </body>
 </html>

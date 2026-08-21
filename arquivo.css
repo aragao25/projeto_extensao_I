@@ -1,264 +1,422 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #123e81;
-    color: #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  background-color: #e2e8f0;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* --- Barra de Pesquisa do Navegador (Topo Fixo) --- */
-.browser-search-bar {
-    width: 100%;
-    background-color: #ffffff7e;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #e0e0e050;
-    position: relative;
-    top: 0;
-    z-index: 1000;
+.cabecalho1 {
+  width: 100%;
+  background-color: #1e3a8a;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #e0e0e050;
+  position: relative;
+  top: 0;
+  z-index: 1000;
 }
 
-.search-input-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.search-input-wrapper i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    width: 18px;
+.portal-titulo h1 {
+  font-size: 1.45em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.portal-titulo p {
+  font-size: 0.9rem;
+  color: #e0e7ff;
+  margin-top: 2px;
+}
+
+.cabecalho-pesquisa {
+  width: 50%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 14px 10px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.barra-pesquisa {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.cabecalho-pesquisa i {
+  position: absolute;
+  top: 50%;
+  margin: 0px;
+  padding: 0;
+  transform: translateY(-50%);
+  color: #888;
+  width: 18px;
 }
 
 .search-input {
-    width: 100%;
-    padding: 10px 12px 10px 45px;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    background-color: #ffffff;
-    font-size: 0.95rem;
-    outline: none;
-    transition: box-shadow 0.2s;
+  width: 100%;
+  padding: 10px 12px 10px 45px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: box-shadow 0.2s;
 }
 
 .search-input:focus {
-    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
-    border-color: rgba(223,225,229,0);
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+/* Container que segura os botões de ícone */
+.acoes-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Estilo básico dos botões com ícone */
+.btn-icone {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* Cor dos ícones */
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* Efeito ao passar o mouse */
+.btn-icone:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-icone:active {
+  transform: scale(0.95);
+}
+
+/* Tamanho do SVG */
+.icone-svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Badge (contador vermelho) sobre o ícone de notificação */
+.badge-notificacao {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #e63946;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid #0e3166; /* Bordinha da cor do cabeçalho para separar */
+}
+
+/* Container que segura o Aside e o Main lado a lado */
+.container-principal {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Alinha com o cabeçalho e rodapé */
+  flex: 1; /* Faz o container crescer e empurrar o footer para o final */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Estilo do Menu Lateral ajustado */
+.menu-lateral {
+  width: 260px;
+  flex-shrink: 0; /* Impede o menu de encolher */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px 10px;
+  align-self: flex-start; /* Mantém a altura adaptável ao conteúdo */
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-menu,
+.botao-categorias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  color: #059669;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.item-menu:hover,
+.botao-categorias:hover {
+  background-color: #e9ecef;
+}
+
+/* Submenu de Categorias */
+.submenu-categorias {
+  display: none;
+  flex-direction: column;
+  padding-left: 15px;
+  margin-top: 4px;
+}
+
+.submenu-categorias a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 8px 12px;
+  color: #555;
+  text-decoration: none;
+  border-radius: 4px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.submenu-categorias a:hover {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+.submenu-categorias.ativo {
+  display: flex;
+}
+
+.seta {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.seta.rotacionada {
+  transform: rotate(180deg);
+}
+
+/* Main */
+.conteudo-principal {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 /* --- Conteúdo Principal do Site --- */
-.main-content {
-    width: 100%;
-    max-width: 1100px;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.conteudo-principal {
+  width: 100%;
+  max-width: 1100px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Header do Portal */
-.portal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 16px 24px;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.portal-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.portal-title h1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1a1a1a;
-}
-
-.portal-title p {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 2px;
-}
-
-.header-actions {
-    display: flex;
-    gap: 10px;
+.cabecalho1-botoes {
+  display: flex;
+  gap: 10px;
 }
 
 .btn-action {
-    padding: 8px 18px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid #dfe1e5;
-    background-color: #ffffff;
-    color: #333;
-    transition: background 0.2s;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #dfe1e5;
+  background-color: #ffffff;
+  color: #333;
+  transition: background 0.2s;
 }
 
 .btn-action:hover {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .btn-action.active {
-    background-color: #297e79;
-    color: #ffffff;
-    border-color: #297e79;
+  background-color: #059669;
+  color: #ffffff;
+  border-color: #059669;
 }
 
 /* --- Grade de Conteúdo (3 Colunas alinhadas com a foto) --- */
-.donation-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.grade-doacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 /* Cartão de Doação */
 .card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card-media {
-    position: relative;
-    height: 180px;
-    background-color: #e0e0e0;
-    width: 100%;
+  position: relative;
+  height: 180px;
+  background-color: #e0e0e0;
+  width: 100%;
 }
 
 .card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.badge-status {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #297e79;
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 3px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 2;
+.legenda-imagem-card {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #059669;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
 }
 
-.card-body {
-    padding: 16px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card-corpo {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-category {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
+.card-categoria {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
 }
 
-.card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-    line-height: 1.3;
+.card-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
-.card-description {
-    font-size: 0.825rem;
-    color: #555;
-    margin-bottom: 16px;
-    line-height: 1.4;
+.card-descricao {
+  font-size: 0.825rem;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.4;
 }
 
-.card-location {
-    font-size: 0.78rem;
-    color: #297e79;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    text-align: left;
-    font-weight: 600;
+.card-local {
+  font-size: 0.78rem;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  font-weight: 600;
 }
 
-.card-location:hover {
-    text-decoration: underline;
+.card-local:hover {
+  text-decoration: underline;
 }
 
 /* Rodapé */
 .site-footer {
-    width: 100%;
-    max-width: 1100px;
-    padding: 20px;
-    text-align: center;
-    color: #888;
-    font-size: 0.8rem;
-    border-top: 1px solid #e0e0e0;
-    margin-top: auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.8rem;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
 }
 
 /* Responsividade */
 @media (max-width: 900px) {
-    .donation-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grade-doacoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    .donation-grid {
-        grid-template-columns: 1fr;
-    }
-    .portal-header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .header-actions {
-        width: 100%;
-        justify-content: center;
-    }
+  .grade-doacoes {
+    grid-template-columns: 1fr;
+  }
+  .portal-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .cabecalho1-botoes {
+    width: 100%;
+    justify-content: center;
+  }
 }

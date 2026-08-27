@@ -458,7 +458,7 @@ const validateMessage =
 
         if (
             content.length >
-            500
+            250
         ) {
 
             alert(

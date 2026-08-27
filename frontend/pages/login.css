@@ -31,6 +31,7 @@
 .tela-login__field label {
     margin-left: 5px;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /* Container de opções (Checkbox e Esqueci minha senha) */

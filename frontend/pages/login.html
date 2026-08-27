@@ -3,25 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Meu Sistema</title>
-  <link rel="stylesheet" href="login.css">
-</head>
-<body>
+  <title>Login - Meu Sistema</title>+
+  <!-- 3 linhas para carregar a fonte Inter para o sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../components/button.css">
+  <link rel="stylesheet" href="../components/input.css">
+</head>
+
+<body>
   <!-- Tag semântica principal (W3C) -->
   <main class="tela-login">
-    <h1 class="tela-login__title">Login</h1>
+    <h1 class="tela-login__title">Acesse sua conta</h1>
 
     <form class="tela-login__formulario" id="login-formulario">
       
       <!-- Campo Usuário -->
       <div class="tela-login__field">
-        <label for="usuario" class="sr-only">Usuário</label>
+        <label for="usuario">Usuário</label>
         <input 
           type="text" 
           id="usuario" 
-          class="tela-login__input" 
-          placeholder="Usuário" 
+          class="input-campo" 
+          placeholder="CPF ou E-mail" 
           required 
           autocomplete="username"
         >
@@ -29,12 +37,12 @@
 
       <!-- Campo Senha -->
       <div class="tela-login__field">
-        <label for="senha" class="sr-only">Senha</label>
+        <label for="senha">Senha</label>
         <input 
           type="password" 
           id="senha" 
-          class="tela-login__input" 
-          placeholder="Senha" 
+          class="input-campo" 
+          placeholder="senha..." 
           required 
           autocomplete="current-password"
         >
@@ -50,7 +58,7 @@
       </div>
 
       <!-- Botão Enviar -->
-      <button type="submit" class="tela-login__button">Entrar</button>
+      <button type="submit" class="botao-primario">Entrar</button>
 
     </form>
 

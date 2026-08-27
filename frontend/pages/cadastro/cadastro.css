@@ -6,11 +6,11 @@
     backdrop-filter: blur(10px);
     border-radius: 20px; /* Arredonda bastante os cantos do botão, criando um formato de pílula. */
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .tela-cadastro__title {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -21,7 +21,7 @@
 
 .tela-cadastro__linha {
     display: flex;
-    justify-content: space-between;
+    gap: 16px;
     align-items: center;
 }
 

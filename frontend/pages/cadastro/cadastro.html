@@ -27,22 +27,24 @@
                 <input type="text" id="nome-completo" class="input-campo" placeholder="Nome Completo" required>
             </div>
 
-            <div class="tela-cadastro__field">
-                <label for="cpf" class="sr-only">CPF</label>
-                <input type="text" id="cpf" class="input-campo" placeholder="CPF" required>
-            </div>
+            <div class="tela-cadastro__linha">
+                <div class="tela-cadastro__field">
+                    <label for="cpf" class="sr-only">CPF</label>
+                    <input type="text" id="cpf" class="input-campo" placeholder="CPF" required>
+                </div>
 
-            <div class="tela-cadastro__field">
-                <label for="data-nascimento" class="sr-only">Data de Nascimento</label>
-                <input 
-                    type="text"
-                    id="data-nascimento"
-                    class="input-campo"
-                    placeholder="Data de Nascimento"
-                    onfocus="(this.type='date')"
-                    onblur="if(!this.value) this.type='text'"
-                    required
-                >
+                <div class="tela-cadastro__field">
+                    <label for="data-nascimento" class="sr-only">Data de Nascimento</label>
+                    <input 
+                        type="text"
+                        id="data-nascimento"
+                        class="input-campo"
+                        placeholder="Data de Nascimento"
+                        onfocus="(this.type='date')"
+                        onblur="if(!this.value) this.type='text'"
+                        required
+                    >
+                </div>
             </div>
 
             <div class="tela-cadastro__field">
@@ -65,7 +67,11 @@
                 <input type="password" id="repete-senha" class="input-campo" placeholder="Repetir Senha" required>
             </div>
 
-            <button type="submit" class="botao-primario">Cadastrar</button>
+            <div class="tela-cadastro__botoes">
+                <button type="submit" class="botao-primario">Cadastrar</button>
+                <button type="button" class="botao-primario">Cancelar</button>
+            </div>
+
         </form>
 
     </main>

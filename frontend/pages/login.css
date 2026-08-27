@@ -21,18 +21,7 @@
 /* ==========================================================================
    3. Elementos do Formulário (.login-card__*)
    ========================================================================== */
-.tela-login__field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 12px;
-    align-items: start;
-}
 
-.tela-login__field label {
-    margin-left: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
 
 /* Container de opções (Checkbox e Esqueci minha senha) */
 .tela-login__opcoes {

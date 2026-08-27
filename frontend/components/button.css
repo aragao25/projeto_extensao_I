@@ -1,0 +1,20 @@
+.botao-primario {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px; /* Arredonda bastante os cantos do botão, criando um formato de pílula. */
+    background: #ffffff;
+    color: #023110;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer; /* Transforma a seta do mouse naquele ícone de "mãozinha" interativa ao passar por cima */
+    transition: opacity 0.2s ease, transform 0.1s ease; /* Cria uma animação suave para a transparência (durando 0,2 segundos) e para o tamanho do botão (durando 0,1 segundo) durante as interações */
+}
+
+.botao-primario:hover { /* Estado ao passar o mouse */
+    opacity: 0.9;
+}
+
+.botao-primario:active { /* Estado ao clicar */
+    transform: scale(0.98); /* Encolhe o botão para 98% do seu tamanho original no milissegundo do clique, criando um efeito tátil de botão sendo pressionado. */
+}

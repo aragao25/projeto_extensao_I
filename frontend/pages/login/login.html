@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Meu Sistema</title>
+    
+    <!-- 1. Estilos Globais -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    
+    <!-- 2. Componentes Reutilizáveis -->
+    <link rel="stylesheet" href="../../components/input.css">
+    <link rel="stylesheet" href="../../components/button.css">
+    
+    <!-- 3. Estilo Específico desta Página -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="tela-login">
+        <h1 class="tela-login__title">Login</h1>
+
+        <form id="login-formulario">
+            <div class="tela-login__field">
+                <label for="usuario" class="sr-only">Usuário</label>
+                <!-- Usando a classe reutilizável de componente -->
+                <input type="text" id="usuario" class="input-campo" placeholder="Usuário" required>
+            </div>
+
+            <div class="tela-login__field">
+                <label for="senha" class="sr-only">Senha</label>
+                <!-- Usando a classe reutilizável de componente -->
+                <input type="password" id="senha" class="input-campo" placeholder="Senha" required>
+            </div>
+
+            <div class="tela-login__opcoes">
+                <label class="tela-login__checkbox-label">
+                  <input type="checkbox" id="lembrar" class="tela-login__checkbox"> Lembre-me
+                </label>
+                <a href="#" class="tela-login__link">Esqueceu sua senha?</a>
+            </div>
+
+            <!-- Usando o botão de componente reutilizável -->
+            <button type="submit" class="botao-primario">Entrar</button>
+        </form>
+
+        <p class="tela-login__footer">
+            Ainda não tem um cadastro? 
+            <a href="../Cadastro/cadastro.html" class="tela-login__link">Registre-se</a>
+        </p>
+    </main>
+
+</body>
+</html>

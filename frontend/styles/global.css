@@ -1,0 +1,31 @@
+/* ==========================================================================
+   1. Google Style Guide & Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box; /* Garante que o padding e as bordas não aumentem o tamanho total definido para o elemento. */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: linear-gradient(135deg, #023110 0%, #05a828 100%); /* Cria o fundo gradiente inclinado a 135 graus. */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #ffffff;
+}
+
+/* Acessibilidade: Oculta elementos visualmente mantendo a leitura por leitores de tela */
+.sr-only {
+    position: absolute; /* Remove o elemento do fluxo visual normal da página. */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; /* Elimina recuos e empurra esse pixel para fora da tela. */
+    overflow: hidden; /* Esconde o conteúdo que transbordar. */
+    clip: rect(0, 0, 0, 0); /* Recorta o elemento tornando-o 100% invisível. */
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,60 @@
+.tela-login {
+    width: 90%;
+    max-width: 320px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px; /* Arredonda bastante os cantos do botão, criando um formato de pílula. */
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.tela-login__title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.tela-login__field {
+    margin-bottom: 12px;
+}
+
+.tela-login__opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+.tela-login__link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.tela-login__link:hover {
+    color: #dddddd;
+}
+
+.tela-login__link {
+    margin-right: 5px;
+}
+
+.tela-login__footer {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.tela-login__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre a caixinha do checkbox e o texto. */
+    cursor: pointer; /* Mostra o ícone de mãozinha interativa. */
+    white-space: nowrap; /* Força o texto a ficar em uma linha só sem quebrar. */
+}
+
+.tela-login__checkbox {
+    margin-left: 5px;
+    cursor: pointer;
+    accent-color: #023110; /* Modifica a cor nativa de marcação do checkbox para roxo. */
+}

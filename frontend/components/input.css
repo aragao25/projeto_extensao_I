@@ -1,0 +1,20 @@
+.input-campo {
+    width: 100%;
+    padding: 12px 16px; /* Adiciona espaçamento interno de 12 pixels no topo/base e 16 pixels nas laterais para afastar o texto digitado das bordas */
+    border: 1px solid transparent; /* Cria uma borda sólida invisível de 1 pixel. Ela reserva o espaço físico no layout para que a caixa não mude de tamanho ao clicar. */
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none; /* Remove a borda nativa do navegador (geralmente azul ou preta) que aparece ao selecionar o campo. */
+    transition: border-color 0.2s ease, background-color 0.2s ease; /* Transiciona suavemente as trocas da cor da borda e do fundo durante 0,2 segundos quando o campo ganha ou perde foco. */
+}
+
+.input-campo::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-campo:focus {
+    background: rgba(255, 255, 255, 0.25); /* Ilumina ligeiramente o fundo (para 25% de opacidade) quando o usuário clica ou navega até o campo */
+    border-color: #ffffff;
+}

@@ -1,0 +1,20 @@
+.tela-cadastro {
+    width: 90%;
+    max-width: 320px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px; /* Arredonda bastante os cantos do botão, criando um formato de pílula. */
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.tela-cadastro__title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.tela-cadastro__field {
+    margin-bottom: 12px;
+}

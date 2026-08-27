@@ -62,6 +62,7 @@
 .tela-login__link--esqueceu,
 .tela-login__link--registro {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .tela-login__link:hover {

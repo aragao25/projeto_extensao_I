@@ -28,3 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
     seta.classList.toggle("rotacionada");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnMinhaconta = document.getElementById("btnMinhaconta");
+  const submenuMinhaconta = document.getElementById("submenuMinhaconta");
+  const setaminhaconta = btnMinhaconta.querySelector(".setaminhaconta");
+
+  btnMinhaconta.addEventListener("click", () => {
+    // Alterna a exibição do submenu
+    submenuMinhaconta.classList.toggle("ativo");
+
+    // Rotaciona a seta indicadora
+    setaminhaconta.classList.toggle("rotacionada");
+  });
+});

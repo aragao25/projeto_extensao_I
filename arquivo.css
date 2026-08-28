@@ -175,10 +175,13 @@ body {
 }
 
 .item-menu,
+.botao-minhaconta,
 .botao-categorias {
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* Altera de inline-flex para flex para respeitar o width: 100% */
+  justify-content: flex-start; /* Garante que o ícone e o texto fiquem juntos no início (esquerda) */
   align-items: center;
+  gap: 8px; /* Controla a distância exata entre o ícone e o texto */
+  width: 100%;
   padding: 12px 16px;
   color: #059669;
   text-decoration: none;
@@ -187,26 +190,37 @@ body {
   border-radius: 6px;
   border: none;
   background: transparent;
-  width: 100%;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
+.item-menu img,
+.botao-categorias img,
+.grupo-minhaconta img {
+  display: block;
+  height: auto;
+  filter: invert(41%) sepia(85%) saturate(836%) hue-rotate(124deg)
+    brightness(96%) contrast(96%);
+}
+
 .item-menu:hover,
-.botao-categorias:hover {
+.botao-categorias:hover,
+.botao-minhaconta:hover {
   background-color: #e9ecef;
 }
 
 /* Submenu de Categorias */
-.submenu-categorias {
+.submenu-categorias,
+.submenu-minhaconta {
   display: none;
   flex-direction: column;
   padding-left: 15px;
   margin-top: 4px;
 }
 
-.submenu-categorias a {
+.submenu-categorias a,
+.submenu-minhaconta a {
   font-size: 0.85rem;
   font-weight: 400;
   padding: 8px 12px;
@@ -218,21 +232,25 @@ body {
     color 0.2s ease;
 }
 
-.submenu-categorias a:hover {
+.submenu-categorias a:hover,
+.submenu-minhaconta a:hover {
   background-color: #e2e6ea;
   color: #000;
 }
 
-.submenu-categorias.ativo {
+.submenu-categorias.ativo,
+.submenu-minhaconta.ativo {
   display: flex;
 }
 
-.seta {
+.seta,
+.setaminhaconta {
   font-size: 12px;
   transition: transform 0.3s ease;
 }
 
-.seta.rotacionada {
+.seta.rotacionada,
+.setaminhaconta.rotacionada {
   transform: rotate(180deg);
 }
 

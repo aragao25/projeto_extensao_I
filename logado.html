@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solidariedade Restinga | Portal de Doações</title>
+    <link rel="stylesheet" href="arquivo.css" />
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header class="cabecalho1">
+      <div class="logo-titulo">
+        <div class="portal-logo">
+          <i data-lucide="heart" fill="#ffffff" color="#ffffff" size="28"></i>
+        </div>
+        <div class="portal-titulo">
+          <h1>Solidariedade Restinga</h1>
+          <p>Conectando doações e necessidades</p>
+        </div>
+      </div>
+      <div class="cabecalho-pesquisa">
+        <i data-lucide="search" color="#0f172a"></i>
+        <div class="barra-pesquisa">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Pesquisar itens para doação no bairro..."
+          />
+        </div>
+      </div>
+
+      <!-- Ações do cabeçalho com os 3 ícones -->
+      <div class="acoes-header">
+        <!-- Ícone de Notificação com Badge -->
+        <button class="btn-icone" aria-label="Notificações">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-notificacao">3</span>
+        </button>
+
+        <!-- Ícone de Chat -->
+        <button class="btn-icone" aria-label="Chat">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Ícone de Minha Conta -->
+        <button class="btn-icone" aria-label="Minha Conta">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Ícone da Página inicial -->
+        <a href="logado.html" class="btn-icone" aria-label="Página inicial">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 10.5 12 3l9 7.5"></path>
+            <path d="M5 9.5V20h14V9.5"></path>
+            <path d="M9 20v-7h6v7"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <div class="container-principal">
+      <!-- --- Menu Lateral do Site --- -->
+      <aside class="menu-lateral">
+        <nav class="nav-menu">
+          <a href="#" class="item-menu"
+            ><img
+              src="./frontend/icones/casa.svg"
+              alt="Ícone da casa"
+              width="20"
+            />Início</a
+          >
+          <a href="#" class="item-menu"
+            ><img
+              src="./frontend/icones/procurar.svg"
+              alt="Ícone procurar"
+              width="20"
+            />Buscar</a
+          >
+          <a
+            href="./frontend/pages/cadastro_doacao/cadastro_doacao.html"
+            class="item-menu"
+            ><img
+              src="./frontend/icones/mais.svg"
+              alt="Ícone de mais"
+              width="20"
+            />Anunciar</a
+          >
+          <a href="#" class="item-menu"
+            ><img
+              src="./frontend/icones/envelope.svg"
+              alt="Ícone de chat"
+              width="20"
+            />Chat</a
+          >
+
+          <div class="grupo-minhaconta">
+            <button class="botao-minhaconta" id="btnMinhaconta">
+              <img
+                src="./frontend/icones/do-utilizador.svg"
+                alt="Ícone de usuário"
+                width="20"
+              />Minha conta
+              <span class="setaminhaconta">▼</span>
+            </button>
+
+            <div class="submenu-minhaconta" id="submenuMinhaconta">
+              <a href="#">Itens doados</a>
+              <a href="#">Itens adquiridos</a>
+              <a href="#">Favoritos</a>
+              <a href="#">Segurança e privacidade</a>
+              <a href="#">Termo de responsabilidade</a>
+            </div>
+          </div>
+
+          <div class="grupo-categorias">
+            <button class="botao-categorias" id="btnCategorias">
+              <img
+                src="./frontend/icones/aplicativos.svg"
+                alt="Ícone de categorias"
+                width="20"
+              />Categorias
+              <span class="seta">▼</span>
+            </button>
+
+            <div class="submenu-categorias" id="submenuCategorias">
+              <a href="#">Alimentos</a>
+              <a href="#">Animais de estimação</a>
+              <a href="#">Artigos infantis</a>
+              <a href="#">Casa, decoração e utensílios</a>
+              <a href="#">Eletro</a>
+              <a href="#">Esportes</a>
+              <a href="#">Higiene e limpeza</a>
+              <a href="#">Informática</a>
+              <a href="#">Material escolar</a>
+              <a href="#">Moda e beleza</a>
+              <a href="#">Móveis</a>
+              <a href="#">Música</a>
+              <a href="#">Papelaria</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- --- Conteúdo Principal do Site --- -->
+      <main class="conteudo-principal">
+        <!-- Header do Portal de Doações -->
+        <div class="cabecalho1-botoes">
+          <button class="btn-action active">Oferecendo</button>
+          <button class="btn-action">Precisando</button>
+          <button class="btn-action" onclick="abrirMapaGeral()">
+            Ver Mapa
+          </button>
+        </div>
+
+        <!-- Grade de Doações (3 Colunas) -->
+        <div class="grade-doacoes">
+          <!-- Cartão 1 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="legenda-imagem-card">Doação</span>
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p1/24773087-tecido-la-casaco-sueter-multi-colori-e-elegante-gerado-de-ai-gratis-foto.jpg"
+                alt="Casaco de Lã Infantil"
+              />
+            </div>
+            <div class="card-corpo">
+              <div>
+                <div class="card-categoria">Vestuário</div>
+                <h2 class="card-titulo">Casaco de Lã Infantil (Tamanho 6)</h2>
+                <p class="card-descricao">
+                  Em ótimo estado de conservação, bem quentinho para o inverno.
+                </p>
+              </div>
+              <button
+                class="card-local"
+                onclick="
+                  abrirLocalizacao('Esplanada da Restinga, Porto Alegre - RS')
+                "
+              >
+                <i data-lucide="map-pin" size="14"></i> Próximo à Esplanada da
+                Restinga
+              </button>
+            </div>
+          </article>
+
+          <!-- Cartão 2 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="legenda-imagem-card">Doação</span>
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p1/74220624-rustico-de-madeira-mesa-com-outono-folhas-e-dramatico-luz-gratis-foto.jpg"
+                alt="Mesa de Madeira"
+              />
+            </div>
+            <div class="card-corpo">
+              <div>
+                <div class="card-categoria">Móveis</div>
+                <h2 class="card-titulo">Mesa de Madeira com 4 Cadeiras</h2>
+                <p class="card-descricao">
+                  Possui marcas de uso mas está bem firme. Precisa retirar no
+                  local.
+                </p>
+              </div>
+              <button
+                class="card-local"
+                onclick="
+                  abrirLocalizacao('CTG Sinuelo da Restinga, Porto Alegre - RS')
+                "
+              >
+                <i data-lucide="map-pin" size="14"></i> Perto do CTG Sinuelo da
+                Restinga
+              </button>
+            </div>
+          </article>
+
+          <!-- Cartão 3 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="legenda-imagem-card">Doação</span>
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p1/47005616-escritorio-suprimentos-dentro-cartao-caixa-gratis-foto.jpg"
+                alt="Materiais Escolares"
+              />
+            </div>
+            <div class="card-corpo">
+              <div>
+                <div class="card-categoria">Educação</div>
+                <h2 class="card-titulo">Kit de material escolar</h2>
+                <p class="card-descricao">
+                  Material em bom estado. Ideal para estudantes da rede pública.
+                </p>
+              </div>
+              <button
+                class="card-local"
+                onclick="
+                  abrirLocalizacao('Escola Ildo Meneghetti, Porto Alegre - RS')
+                "
+              >
+                <i data-lucide="map-pin" size="14"></i> Próximo à Escola Ildo
+                Meneghetti
+              </button>
+            </div>
+          </article>
+
+          <!-- Cartão 4 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="legenda-imagem-card">Doação</span>
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p2/36729020-ai-gerado-a-caro-microondas-forno-gratis-foto.jpg"
+                alt="Microondas Consul"
+              />
+            </div>
+            <div class="card-corpo">
+              <div>
+                <div class="card-categoria">Eletrodomésticos</div>
+                <h2 class="card-titulo">Microondas Consul</h2>
+                <p class="card-descricao">
+                  Funcionando perfeitamente. Possui pequenos detalhes estéticos
+                  na porta.
+                </p>
+              </div>
+              <button
+                class="card-local"
+                onclick="
+                  abrirLocalizacao('Vila Nova Restinga, Porto Alegre - RS')
+                "
+              >
+                <i data-lucide="map-pin" size="14"></i> Vila Nova Restinga
+              </button>
+            </div>
+          </article>
+
+          <!-- Cartão 5 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="legenda-imagem-card">Doação</span>
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p1/71559716-construcao-materiais-tijolos-tubos-cascalho-em-uma-construcao-local-gratis-foto.jpeg"
+                alt="Tijolos"
+              />
+            </div>
+            <div class="card-corpo">
+              <div>
+                <div class="card-categoria">Móveis</div>
+                <h2 class="card-titulo">Tijolos</h2>
+                <p class="card-descricao">
+                  Material pode ser reutilizado. Precisa retirar no local.
+                </p>
+              </div>
+              <button
+                class="card-local"
+                onclick="
+                  abrirLocalizacao(
+                    'Instituto Federal da Restinga, Porto Alegre - RS',
+                  )
+                "
+              >
+                <i data-lucide="map-pin" size="14"></i> Perto do Instituto
+                Federal da Restinga
+              </button>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <!-- Rodapé do Site -->
+    <footer class="site-footer">
+      <p>&copy; 2024 Solidariedade Restinga. Uma iniciativa comunitária.</p>
+    </footer>
+
+    <!-- Script de ativação de ícones e funções de navegação -->
+    <script src="script.js"></script>
+  </body>
+</html>

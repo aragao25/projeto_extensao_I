@@ -1,158 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Doação</title>
-    <link rel="stylesheet" href="cadastro_doacao.css" />
-    <script src="cadastro_doacao.js" defer></script>
-  </head>
-  <body>
-    <header class="cabecalho1">
-      <div class="logo-titulo">
-        <div class="portal-logo">
-          <i data-lucide="heart" fill="#ffffff" color="#ffffff" size="28"></i>
-        </div>
-        <div class="portal-titulo">
-          <h1>Solidariedade Restinga</h1>
-          <p>Conectando doações e necessidades</p>
-        </div>
-      </div>
-      <div class="cabecalho-pesquisa">
-        <i data-lucide="search" color="#0f172a"></i>
-        <div class="barra-pesquisa">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Pesquisar itens para doação no bairro..."
-          />
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Doação</title>
+  <link rel="stylesheet" href="cadastro_doacao.css">
+  <script src="cadastro_doacao.js" defer></script>
+</head>
+<body>
+
+  <!-- Tag semântica principal (W3C) -->
+  <main class="form-box">
+    <h1 class="form-title">Cadastro de Doação</h1>
+
+    <form class="form-doacao" id="form-doacao">
+      
+      <!-- Campo do Título da Doação -->
+      <div class="form-input__field">
+        <label for="titulo-doacao" class="sr-only">Título do anúncio</label>
+        <input 
+          type="text" 
+          id="titulo-doacao" 
+          class="form-doacao__input" 
+          placeholder="Título do anúncio" 
+          required 
+        >
       </div>
 
-      <!-- Ações do cabeçalho com os 3 ícones -->
-      <div class="acoes-header">
-        <!-- Ícone de Notificação com Badge -->
-        <button class="btn-icone" aria-label="Notificações">
-          <svg
-            class="icone-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-          <span class="badge-notificacao">3</span>
-        </button>
+      <!-- Campo da Descrição do Item -->
+    <div class="form-input__field">
+            <label for="descricao-item" class="sr-only">Descrição do item</label>
+            <textarea
+                name="descricao-item" 
+                id="descricao-item" 
+                class="form-doacao__input" 
+                placeholder="Descreva condições e mais detalhes sobre o item a ser doado."
+            ></textarea>
+    </div>
 
-        <!-- Ícone de Chat -->
-        <button class="btn-icone" aria-label="Chat">
-          <svg
-            class="icone-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-            ></path>
-          </svg>
-        </button>
+    <!-- Campo de Anexo de Imagens do Item -->
+     <div class="form-input__field">
+        <label for="imagens-do-item" class="sr-only"></label>
+        <input type="file" id="imagens" name="imagens" accept="image/*" multiple>
+        <div id="preview-container"></div>
+     </div>
 
-        <!-- Ícone de Minha Conta -->
-        <button class="btn-icone" aria-label="Minha Conta">
-          <svg
-            class="icone-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </button>
-
-        <!-- Ícone da Página inicial -->
-        <a href="logado.html" class="btn-icone" aria-label="Página inicial">
-          <svg
-            class="icone-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M3 10.5 12 3l9 7.5"></path>
-            <path d="M5 9.5V20h14V9.5"></path>
-            <path d="M9 20v-7h6v7"></path>
-          </svg>
-        </a>
+    <!-- Opções -->
+      <div class="tela-login__opcoes">
       </div>
-    </header>
 
-    <!-- Tag semântica principal (W3C) -->
-    <main class="form-box">
-      <h1 class="form-title">Cadastro de Doação</h1>
+      <!-- Botão Enviar -->
+      <button type="submit" class="form-doacao__button">Publicar</button>
 
-      <form class="form-doacao" id="form-doacao">
-        <!-- Campo do Título da Doação -->
-        <div class="form-input__field">
-          <label for="titulo-doacao" class="sr-only">Título do anúncio</label>
-          <input
-            type="text"
-            id="titulo-doacao"
-            class="form-doacao__input"
-            placeholder="Título do anúncio"
-            required
-          />
-        </div>
+    </form>
 
-        <!-- Campo da Descrição do Item -->
-        <div class="form-input__field">
-          <label for="descricao-item" class="sr-only">Descrição do item</label>
-          <textarea
-            name="descricao-item"
-            id="descricao-item"
-            class="form-doacao__input"
-            placeholder="Descreva condições e mais detalhes sobre o item a ser doado."
-          ></textarea>
-        </div>
+    <p class="tela-login__footer">
+    </p>
+  </main>
 
-        <!-- Campo de Anexo de Imagens do Item -->
-        <div class="form-input__field">
-          <label for="imagens-do-item" class="sr-only"></label>
-          <input
-            type="file"
-            id="imagens"
-            name="imagens"
-            accept="image/*"
-            multiple
-          />
-          <div id="preview-container"></div>
-        </div>
-
-        <!-- Opções -->
-        <div class="tela-login__opcoes"></div>
-
-        <!-- Botão Enviar -->
-        <button type="submit" class="form-doacao__button">Publicar</button>
-      </form>
-
-      <p class="tela-login__footer"></p>
-    </main>
-  </body>
+</body>
 </html>

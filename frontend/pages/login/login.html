@@ -1,72 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Meu Sistema</title>
-  <!-- 3 linhas para carregar a fonte Inter para o sistema -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Meu Sistema</title>
+    <!-- 3 linhas para carregar a fonte Inter para o sistema -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="../components/button.css">
-  <link rel="stylesheet" href="../components/input.css">
-</head>
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="./components/button.css" />
+    <link rel="stylesheet" href="./components/input.css" />
+  </head>
 
-<body>
-  <!-- Tag semântica principal (W3C) -->
-  <main class="tela-login">
-    <h1 class="tela-login__title">Acesse sua conta</h1>
+  <body>
+    <!-- Tag semântica principal (W3C) -->
+    <main class="tela-login">
+      <h1 class="tela-login__title">Acesse sua conta</h1>
 
-    <form class="tela-login__formulario" id="login-formulario">
-      
-      <!-- Campo Usuário -->
-      <div class="label-campo">
-        <label for="usuario">Usuário</label>
-        <input 
-          type="text" 
-          id="usuario" 
-          class="input-campo" 
-          placeholder="CPF ou E-mail" 
-          required 
-          autocomplete="username"
+      <form class="tela-login__formulario" id="login-formulario">
+        <!-- Campo Usuário -->
+        <div class="label-campo">
+          <label for="usuario">Usuário</label>
+          <input
+            type="text"
+            id="usuario"
+            class="input-campo"
+            placeholder="CPF ou E-mail"
+            required
+            autocomplete="username"
+          />
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="label-campo">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            class="input-campo"
+            placeholder="Sua senha"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+
+        <!-- Opções -->
+        <div class="tela-login__opcoes">
+          <label class="tela-login__checkbox-label">
+            <input type="checkbox" id="lembrar" class="tela-login__checkbox" />
+            <span>Lembre-me</span>
+          </label>
+          <a href="#" class="tela-login__link tela-login__link--esqueceu"
+            >Esqueceu sua senha?</a
+          >
+        </div>
+
+        <!-- Botão Enviar -->
+        <button type="submit" class="botao-primario">Entrar</button>
+      </form>
+
+      <p class="tela-login__footer">
+        Ainda não tem um cadastro?
+        <a
+          href="../pages/cadastro/cadastro.html"
+          class="tela-login__link tela-login__link--registro"
+          >Registre-se</a
         >
-      </div>
-
-      <!-- Campo Senha -->
-      <div class="label-campo">
-        <label for="senha">Senha</label>
-        <input 
-          type="password" 
-          id="senha" 
-          class="input-campo" 
-          placeholder="Sua senha" 
-          required 
-          autocomplete="current-password"
-        >
-      </div>
-
-      <!-- Opções -->
-      <div class="tela-login__opcoes">
-        <label class="tela-login__checkbox-label">
-          <input type="checkbox" id="lembrar" class="tela-login__checkbox">
-          <span>Lembre-me</span>
-        </label>
-        <a href="#" class="tela-login__link tela-login__link--esqueceu">Esqueceu sua senha?</a>
-      </div>
-
-      <!-- Botão Enviar -->
-      <button type="submit" class="botao-primario">Entrar</button>
-
-    </form>
-
-    <p class="tela-login__footer">
-      Ainda não tem um cadastro? 
-      <a href="../pages/cadastro/cadastro.html" class="tela-login__link tela-login__link--registro">Registre-se</a>
-    </p>
-  </main>
-
-</body>
+      </p>
+    </main>
+  </body>
 </html>

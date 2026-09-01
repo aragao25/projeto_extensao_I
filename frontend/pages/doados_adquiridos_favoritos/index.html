@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solidariedade Restinga | Portal de Doações</title>
+    <link rel="stylesheet" href="arquivo.css" />
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+<body>
+    <header class="cabecalho1">
+      <div class="logo-titulo">
+        <div class="portal-logo">
+          <i data-lucide="heart" fill="#ffffff" color="#ffffff" size="28"></i>
+        </div>
+        <div class="portal-titulo">
+          <h1>Solidariedade Restinga</h1>
+          <p>Conectando doações e necessidades</p>
+        </div>
+      </div>
+      <div class="cabecalho-pesquisa">
+        <i data-lucide="search" color="#0f172a"></i>
+        <div class="barra-pesquisa">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Pesquisar itens para doação no bairro..."
+          />
+        </div>
+      </div>
+
+      <!-- Ações do cabeçalho com os 3 ícones -->
+      <div class="acoes-header">
+        <!-- Ícone de Notificação com Badge -->
+        <button class="btn-icone" aria-label="Notificações">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-notificacao">3</span>
+        </button>
+
+        <!-- Ícone de Chat -->
+        <button class="btn-icone" aria-label="Chat">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Ícone de Minha Conta -->
+        <button class="btn-icone" aria-label="Minha Conta">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Ícone da Página inicial -->
+        <a href="logado.html" class="btn-icone" aria-label="Página inicial">
+          <svg
+            class="icone-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 10.5 12 3l9 7.5"></path>
+            <path d="M5 9.5V20h14V9.5"></path>
+            <path d="M9 20v-7h6v7"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <div class="container-principal">
+      <!-- --- Menu Lateral do Site --- -->
+      <aside class="menu-lateral">
+        <nav class="nav-menu">
+          <a href="#" class="item-menu"
+            ><img
+              src="../../icones/casa.svg"
+              alt="Ícone da casa"
+              width="20"
+            />Início</a
+          >
+          <a href="#" class="item-menu"
+            ><img
+              src="../../icones/procurar.svg"
+              alt="Ícone procurar"
+              width="20"
+            />Buscar</a
+          >
+          <a
+            href="#"
+            class="item-menu"
+            ><img
+              src="../../icones/mais.svg"
+              alt="Ícone de mais"
+              width="20"
+            />Anunciar</a
+          >
+          <a href="#" class="item-menu"
+            ><img
+              src="../../icones/envelope.svg"
+              alt="Ícone de chat"
+              width="20"
+            />Chat</a
+          >
+
+          <div class="grupo-minhaconta">
+            <button class="botao-minhaconta" id="btnMinhaconta">
+              <img
+                src="../../icones/do-utilizador.svg"
+                alt="Ícone de usuário"
+                width="20"
+              />Minha conta
+              <span class="setaminhaconta">▼</span>
+            </button>
+
+            <div class="submenu-minhaconta" id="submenuMinhaconta">
+              <a href="#">Itens doados</a>
+              <a href="#">Itens adquiridos</a>
+              <a href="#">Favoritos</a>
+              <a href="#">Segurança e privacidade</a>
+              <a href="#">Termo de responsabilidade</a>
+            </div>
+          </div>
+
+          <div class="grupo-categorias">
+            <button class="botao-categorias" id="btnCategorias">
+              <img
+                src="../../icones/aplicativos.svg"
+                alt="Ícone de categorias"
+                width="20"
+              />Categorias
+              <span class="seta">▼</span>
+            </button>
+
+            <div class="submenu-categorias" id="submenuCategorias">
+              <a href="#">Alimentos</a>
+              <a href="#">Animais de estimação</a>
+              <a href="#">Artigos infantis</a>
+              <a href="#">Casa, decoração e utensílios</a>
+              <a href="#">Eletro</a>
+              <a href="#">Esportes</a>
+              <a href="#">Higiene e limpeza</a>
+              <a href="#">Informática</a>
+              <a href="#">Material escolar</a>
+              <a href="#">Moda e beleza</a>
+              <a href="#">Móveis</a>
+              <a href="#">Música</a>
+              <a href="#">Papelaria</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- --- Conteúdo Principal do Site --- -->
+      <main class="conteudo-principal">
+        <!-- Header do Portal de Doações -->
+        <div class="tabs">
+            <button class="tab active" data-tab="doados">Doados</button>
+            <button class="tab" data-tab="adquiridos">Adquiridos</button>
+            <button class="tab" data-tab="favoritos">Favoritos</button>
+            <button class="tab" data-tab="seguranca">Segurança e privacidade</button>
+            <button class="tab">
+            <a href="../termo-responsabilidade/termo_responsabilidade.html">Termo de responsabilidade</a>
+            </button>
+
+        </div>
+
+        <div id="conteudo">
+          Você ainda não deu nenhum item.
+        </div>
+      </main>
+    </div>
+
+    <!-- Rodapé do Site -->
+    <footer class="site-footer">
+      <p>&copy; 2024 Solidariedade Restinga. Uma iniciativa comunitária.</p>
+    </footer>
+
+    <!-- Script de ativação de ícones e funções de navegação -->
+    <script src="script.js"></script>
+</body>
+</html>

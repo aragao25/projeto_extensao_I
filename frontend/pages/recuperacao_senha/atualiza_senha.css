@@ -1,0 +1,42 @@
+.tela-atualiza-senha {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px; /* Arredonda bastante os cantos do botão, criando um formato de pílula. */
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.tela-atualiza-senha__title {
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.tela-cadastro__field {
+    margin-bottom: 12px;
+}
+
+.tela-cadastro__linha {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.tela-atualiza-senha__botoes {
+    align-items: center;
+    margin-top: 40px;
+}
+
+.tela-atualiza-senha__regras {
+    font-size: 0.9rem;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.regra-valida {
+    color: #00FF00;
+}

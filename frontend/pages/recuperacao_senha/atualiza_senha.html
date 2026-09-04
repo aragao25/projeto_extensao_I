@@ -28,26 +28,42 @@
         <form id="atualiza-senha-form">
             <div class="label-campo">
                 <label for="nova-senha">Nova senha</label>
-                <!-- Usando a classe reutilizável de componente -->
-                <input 
-                    type="password" 
-                    id="nova-senha" 
-                    class="input-campo" 
-                    required
-                    autocomplete="current-password"
-                >
+                <div class="campo-container">
+                    <input 
+                        type="password" 
+                        id="nova-senha" 
+                        class="input-campo" 
+                        required
+                        autocomplete="current-password"
+                    >
+
+                    <button type="button" class="botao-visualiza" aria-label="Mostrar senha">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <div class="label-campo">
                 <label for="atualiza-senha">Confirme senha</label>
-                <!-- Usando a classe reutilizável de componente -->
-                <input 
-                    type="password" 
-                    id="confirma-senha" 
-                    class="input-campo" 
-                    required
-                    autocomplete="current-password"
-                >
+                <div class="campo-container">
+                    <input 
+                        type="password" 
+                        id="confirma-senha" 
+                        class="input-campo" 
+                        required
+                        autocomplete="current-password"
+                    >
+
+                    <button type="button" class="botao-visualiza" aria-label="Mostrar senha">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <div class="tela-atualiza-senha__regras">
@@ -61,7 +77,7 @@
             </div>
 
             <div class="tela-atualiza-senha__botoes">
-                <button type="submit" class="botao-primario">Salvar senha</button>
+                <button type="submit" id="botao-salvar" class="botao-primario" disabled>Salvar senha</button>
             </div>
 
         </form>

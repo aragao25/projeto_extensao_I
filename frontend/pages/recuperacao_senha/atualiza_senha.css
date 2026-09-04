@@ -40,3 +40,40 @@
 .regra-valida {
     color: #00FF00;
 }
+
+.input-campo.campo-valido {
+    border-color: #00FF00;
+    outline: none;
+    box-shadow: 0 0 0 2px #00FF00;
+}
+
+.campo-container {
+    position: relative;
+    width: 100%;
+}
+
+.campo-container input {
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.campo-container button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.botao-primario:disabled {
+    opacity: 0.5;
+    cursor:not-allowed ;
+}

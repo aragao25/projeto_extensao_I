@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualiza Senha - Meu Sistema</title>
+      <!-- 3 linhas para carregar a fonte Inter para o sistema -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 1. Estilos Globais -->
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- 2. Componentes Reutilizáveis -->
+    <link rel="stylesheet" href="../../components/input.css">
+    <link rel="stylesheet" href="../../components/button.css">
+    
+    <!-- 3. Estilo Específico desta Página -->
+    <link rel="stylesheet" href="atualiza_senha.css">
+
+</head>
+
+<body>
+    <main class="tela-atualiza-senha">
+        <h1 class="tela-atualiza-senha__title">Atualização de senha</h1>
+
+        <form id="atualiza-senha-form">
+            <div class="label-campo">
+                <label for="nova-senha">Nova senha</label>
+                <!-- Usando a classe reutilizável de componente -->
+                <input 
+                    type="password" 
+                    id="nova-senha" 
+                    class="input-campo" 
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <div class="label-campo">
+                <label for="atualiza-senha">Confirme senha</label>
+                <!-- Usando a classe reutilizável de componente -->
+                <input 
+                    type="password" 
+                    id="confirma-senha" 
+                    class="input-campo" 
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <div class="tela-atualiza-senha__regras">
+                <ul>
+                    <li id="caracteres">Mínimo 8 caracteres</li>
+                    <li id="maiuscula">Pelo menos uma letra MAIÚSCULA</li>
+                    <li id="minuscula">Pelo menos uma letra minúscula</li>
+                    <li id="numero">Pelo menos um número</li>
+                    <li id="especial">Pelo menos um carácter especial (@, #, $, %, &, * e !)</li>
+                </ul>
+            </div>
+
+            <div class="tela-atualiza-senha__botoes">
+                <button type="submit" class="botao-primario">Salvar senha</button>
+            </div>
+
+        </form>
+
+    </main>
+</body>
+
+<script src="recuperacao.js"></script>

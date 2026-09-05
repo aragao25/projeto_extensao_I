@@ -28,7 +28,7 @@ function validarSenhas() {
     regraNumero.classList.toggle('regra-valida', temNumero);
     regraEspecial.classList.toggle('regra-valida', temEspecial);
 
-    const eValida = temOitoCaracteres && temMaiuscula && temMinuscu && temNumero && temEspecial;
+    const eValida = temOitoCaracteres && temMaiuscula && temMinuscula && temNumero && temEspecial;
     const senhasCoincidem = (senha === confirma) && confirma !== '';
 
     // Destaque visual dos campos 🟢

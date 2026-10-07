@@ -26,8 +26,11 @@
 }
 
 .tela-atualiza-senha__botoes {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    gap: 15px;
 }
 
 .tela-atualiza-senha__regras {

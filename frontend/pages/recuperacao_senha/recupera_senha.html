@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualiza Senha - Meu Sistema</title>
+      <!-- 3 linhas para carregar a fonte Inter para o sistema -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 1. Estilos Globais -->
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- 2. Componentes Reutilizáveis -->
+    <link rel="stylesheet" href="../../components/input.css">
+    <link rel="stylesheet" href="../../components/button.css">
+    
+    <!-- 3. Estilo Específico desta Página -->
+    <link rel="stylesheet" href="recupera_senha.css">
+
+</head>
+
+<body>
+    <main class="tela-recupera-senha">
+        <h1 class="tela-recupera-senha__title">Esqueceu sua senha?</h1>
+        <p class="tela-recupera-senha__informativo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#EAB308" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L1 21H23L12 2ZM11 16H13V18H11V16ZM11 10H13V14H11V10Z"/>
+            </svg>
+            Informe abaixo seu e-mail de login e em seguida acesse seu e-mail para 
+            seguir o passo a passo para recuperação de sua senha.
+        </p>
+
+        <form id="recupera-senha-form">
+            <div class="label-campo">
+                <label for="email-usuario">E-mail</label>
+                <div class="campo-container">
+                    <input 
+                        type="email"
+                        id="email-usuario" 
+                        class="input-campo" 
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+            </div>
+
+            <div class="tela-recupera-senha__botoes">
+                <button type="submit" id="botao-recuperar" class="botao-primario" disabled>Recuperar senha</button>
+                <a href="../login/login.html">Voltar ao login</a>
+            </div>
+
+        </form>
+
+    </main>
+</body>
+
+<script src="recuperacao.js"></script>

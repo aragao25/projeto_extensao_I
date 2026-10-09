@@ -44,6 +44,26 @@
     flex-shrink: 0;
 }
 
+.tela-recupera-senha__resposta {
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mensagem-resposta {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+#mensagem-resposta svg {
+    flex-shrink: 0;
+}
+
 .regra-valida {
     color: #00FF00;
 }

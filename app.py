@@ -1,41 +1,22 @@
-import os
-from dotenv import load_dotenv
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
-from fastapi import FastAPI
+from flask import Flask, request, jsonify
+from flask_cors import CORS  # Permite requisições vindas do navegador
 
-# Inicia o servidor web
-app = FastAPI()
-
-# Carrega variáveis de ambiente
-load_dotenv()
-PEPPER = os.getenv("PEPPER")
-
-# Prepara o Argon2ID
-ph = PasswordHasher()
+app = Flask(__name__)
+CORS(app)  # Libera o acesso para o seu frontend
 
 
-# Cria rota escutando o método POST no caminho \login
-@app.post("/login")
-def validar_login():
-    senha_digitada = "OP@cheguei1975"
+@app.route('/api/recuperar-senha', methods=['POST'])
+def recuperar_senha():
+    # 1. Pega os dados enviados em formato JSON pelo JS
+    dados = request.get_json()
+    email = dados.get('email')
 
-    # Senha digitada pelo usuário combinada com o Pepper
-    senha_com_pepper = senha_digitada + PEPPER
+    # 2. Simulação de verificação
+    if email:
+        return jsonify({"mensagem": "E-mail enviado com sucesso!"}), 200
+    else:
+        return jsonify({"mensagem": "Erro: informe um e-mail válido."}), 400
 
-    # Criação do hash final da senha que será gravado no BD
-    hash_final = ph.hash(senha_com_pepper)
 
-    print(hash_final)
-
-    # VERIFICAÇÃO DE SENHA DIGITADA PELO USUÁRIO
-    hash_salvo_banco = "senhadobanco"
-    senha_digitada_pelo_usuario = "SenhaUsuario111!"
-    senha_com_pepper = senha_digitada_pelo_usuario + PEPPER
-
-    try:
-        # Argon2ID compara o hash salvo no banco com a senha digitada pelo usuário
-        ph.verify(hash_salvo_banco, senha_com_pepper)
-        print("Senha aceita!")
-    except VerifyMismatchError:
-        print("Senha incorreta!")
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)

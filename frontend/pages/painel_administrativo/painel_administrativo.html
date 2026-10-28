@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo |  </title>
+  <link rel="stylesheet" href="./painel_administrativo.css">
+  <script src="./painel_administrativo.js" defer></script>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="marca-admin">
+          <span class="marca-icone"></span>
+          <div>
+            <strong></strong>
+            <small>Administração</small>
+          </div>
+        </div>
+
+        <button class="fechar-menu" id="fechar-menu"
+                aria-label="Fechar menu">×</button>
+      </div>
+
+      <p class="menu-legenda">MENU PRINCIPAL</p>
+
+      <nav class="navegacao" aria-label="Menu administrativo">
+        <button class="nav-item ativo" data-view="visao-geral">
+          <span>▦</span> Visão geral
+        </button>
+        <button class="nav-item" data-view="usuarios">
+          <span>♙</span> Usuários
+        </button>
+        <button class="nav-item" data-view="anuncios">
+          <span>▤</span> Anúncios
+        </button>
+        <button class="nav-item" data-view="solicitacoes">
+          <span>⇄</span> Solicitações
+        </button>
+        <button class="nav-item" data-view="categorias">
+          <span>▦</span> Categorias
+        </button>
+        <button class="nav-item" data-view="moderacao">
+          <span>✓</span> Moderação
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-avatar">A</div>
+        <div class="admin-identificacao">
+          <strong>Administrador</strong>
+          <small>Painel de gestão</small>
+        </div>
+      </div>
+    </aside>
+
+    <div class="conteudo-principal">
+
+      <header class="topbar">
+        <button id="abrir-menu" class="menu-mobile"
+                aria-label="Abrir menu">☰</button>
+
+        <div class="topbar-titulo">
+          <span class="topbar-legenda">ADMINISTRAÇÃO</span>
+          <h1 id="titulo-pagina">Visão geral</h1>
+        </div>
+
+        <a class="botao-topo" href="../listagem_categoria/listagem_categoria.html">
+          Ver site ↗
+        </a>
+      </header>
+
+      <main class="conteudo">
+
+        <!-- VISÃO GERAL -->
+        <section class="view ativa" id="view-visao-geral">
+          <div class="boas-vindas">
+            <div>
+              <span class="etiqueta">PAINEL DE CONTROLE</span>
+              <h2>Bem-vindo à administração</h2>
+              <p>Acompanhe as principais atividades da plataforma.</p>
+            </div>
+            <div class="data-atual" id="data-atual"></div>
+          </div>
+
+          <div class="grade-indicadores">
+            <article class="indicador">
+              <div class="indicador-topo">
+                <span>Usuários cadastrados</span>
+                <span class="indicador-icone">♙</span>
+              </div>
+              <strong id="total-usuarios">120</strong>
+              <small>Total demonstrativo</small>
+            </article>
+
+            <article class="indicador">
+              <div class="indicador-topo">
+                <span>Anúncios publicados</span>
+                <span class="indicador-icone">▤</span>
+              </div>
+              <strong id="total-anuncios">48</strong>
+              <small>Total demonstrativo</small>
+            </article>
+
+            <article class="indicador">
+              <div class="indicador-topo">
+                <span>Solicitações</span>
+                <span class="indicador-icone">⇄</span>
+              </div>
+              <strong id="total-solicitacoes">32</strong>
+              <small>Total demonstrativo</small>
+            </article>
+
+            <article class="indicador">
+              <div class="indicador-topo">
+                <span>Pendentes de análise</span>
+                <span class="indicador-icone">◷</span>
+              </div>
+              <strong id="total-pendentes">5</strong>
+              <small>Total demonstrativo</small>
+            </article>
+          </div>
+
+          <section class="painel-card">
+            <div class="card-cabecalho">
+              <div>
+                <h2>Anúncios recentes</h2>
+                <p>Acompanhe as publicações cadastradas.</p>
+              </div>
+              <button class="botao-outline" data-go="anuncios">
+                Ver todos
+              </button>
+            </div>
+
+            <div class="tabela-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Anúncio</th>
+                    <th>Categoria</th>
+                    <th>Responsável</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela-recentes"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <div class="grade-inferior">
+            <section class="painel-card">
+              <div class="card-cabecalho">
+                <div>
+                  <h2>Atalhos administrativos</h2>
+                  <p>Acesse as principais áreas.</p>
+                </div>
+              </div>
+              <div class="atalhos">
+                <button data-go="usuarios">♙ Gerenciar usuários</button>
+                <button data-go="moderacao">✓ Revisar anúncios</button>
+                <button data-go="categorias">▦ Gerenciar categorias</button>
+                <button data-go="solicitacoes">⇄ Ver solicitações</button>
+              </div>
+            </section>
+
+            <section class="painel-card">
+              <div class="card-cabecalho">
+                <div>
+                  <h2>Resumo da plataforma</h2>
+                  <p>Distribuição ilustrativa dos anúncios.</p>
+                </div>
+              </div>
+              <div class="resumo-linha">
+                <span>Ativos</span><strong>65%</strong>
+              </div>
+              <div class="barra"><span style="width:65%"></span></div>
+              <div class="resumo-linha">
+                <span>Pendentes</span><strong>20%</strong>
+              </div>
+              <div class="barra"><span style="width:20%"></span></div>
+              <div class="resumo-linha">
+                <span>Concluídos</span><strong>15%</strong>
+              </div>
+              <div class="barra"><span style="width:15%"></span></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- USUÁRIOS -->
+        <section class="view" id="view-usuarios">
+          <div class="view-intro">
+            <h2>Usuários</h2>
+            <p>Consulte os usuários de exemplo cadastrados na plataforma.</p>
+          </div>
+          <div class="painel-card">
+            <div class="filtros">
+              <input type="search" id="busca-usuarios"
+                     placeholder="Buscar por nome ou e-mail..."
+                     aria-label="Buscar usuários">
+            </div>
+            <div class="tabela-wrapper">
+              <table>
+                <thead>
+                  <tr><th>Nome</th><th>E-mail</th><th>Cadastro</th><th>Status</th></tr>
+                </thead>
+                <tbody id="tabela-usuarios"></tbody>
+              </table>
+            </div>
+            <p class="mensagem-vazia" id="vazio-usuarios" hidden>
+              Nenhum usuário encontrado.
+            </p>
+          </div>
+        </section>
+
+        <!-- ANÚNCIOS -->
+        <section class="view" id="view-anuncios">
+          <div class="view-intro">
+            <h2>Anúncios</h2>
+            <p>Consulte as publicações de doação.</p>
+          </div>
+          <div class="painel-card">
+            <div class="filtros">
+              <input type="search" id="busca-anuncios"
+                     placeholder="Buscar anúncio ou categoria..."
+                     aria-label="Buscar anúncios">
+              <select id="filtro-anuncios" aria-label="Filtrar anúncios por status">
+                <option value="">Todos os status</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Concluído">Concluído</option>
+              </select>
+            </div>
+            <div class="tabela-wrapper">
+              <table>
+                <thead>
+                  <tr><th>Anúncio</th><th>Categoria</th><th>Responsável</th><th>Status</th><th>Ação</th></tr>
+                </thead>
+                <tbody id="tabela-anuncios"></tbody>
+              </table>
+            </div>
+            <p class="mensagem-vazia" id="vazio-anuncios" hidden>
+              Nenhum anúncio encontrado.
+            </p>
+          </div>
+        </section>
+
+        <!-- SOLICITAÇÕES -->
+        <section class="view" id="view-solicitacoes">
+          <div class="view-intro">
+            <h2>Solicitações de doação</h2>
+            <p>Acompanhe os pedidos registrados.</p>
+          </div>
+          <div class="painel-card">
+            <div class="tabela-wrapper">
+              <table>
+                <thead>
+                  <tr><th>Solicitação</th><th>Solicitante</th><th>Data</th><th>Status</th></tr>
+                </thead>
+                <tbody id="tabela-solicitacoes"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORIAS -->
+        <section class="view" id="view-categorias">
+          <div class="view-intro">
+            <h2>Categorias</h2>
+            <p>Organize as categorias disponíveis para as doações.</p>
+          </div>
+          <div class="painel-card">
+            <form id="form-categoria" class="form-categoria">
+              <label for="nova-categoria">Adicionar categoria</label>
+              <div class="filtros">
+                <input id="nova-categoria" type="text"
+                       placeholder="Nome da categoria" required maxlength="60">
+                <button class="botao-principal" type="submit">Adicionar</button>
+              </div>
+              <p id="mensagem-categoria" class="mensagem" role="status"></p>
+            </form>
+            <div id="lista-categorias" class="lista-categorias"></div>
+          </div>
+        </section>
+
+        <!-- MODERAÇÃO -->
+        <section class="view" id="view-moderacao">
+          <div class="view-intro">
+            <h2>Moderação de anúncios</h2>
+            <p>Revise publicações pendentes antes da aprovação.</p>
+          </div>
+          <div class="painel-card">
+            <div class="tabela-wrapper">
+              <table>
+                <thead>
+                  <tr><th>Anúncio</th><th>Categoria</th><th>Responsável</th><th>Ações</th></tr>
+                </thead>
+                <tbody id="tabela-moderacao"></tbody>
+              </table>
+            </div>
+            <p class="mensagem-vazia" id="vazio-moderacao" hidden>
+              Não há anúncios pendentes de análise.
+            </p>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="rodape">
+        · Painel administrativo
+      </footer>
+    </div>
+  </div>
+
+  <div class="fundo-menu" id="fundo-menu"></div>
+
+</body>
+</html>

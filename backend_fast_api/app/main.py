@@ -14,7 +14,8 @@ async def lifespan(app: FastAPI):
     await engine.dispose()          # fecha o pool de conexões ao desligar
 
 
-app = FastAPI(title="API de Doações", version="0.1.0", lifespan=lifespan)   # <- a variável "app"
+app = FastAPI(title="API de Doações", version="0.1.0",
+              lifespan=lifespan)   # <- a variável "app"
 
 app.add_middleware(
     CORSMiddleware,

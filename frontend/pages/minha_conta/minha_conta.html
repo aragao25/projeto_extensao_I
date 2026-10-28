@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Minha Conta |   </title>
+  <link rel="stylesheet" href="./minha_conta.css">
+  <script src="./minha_conta.js" defer></script>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="../../minha_conta.html">Início</a>
+      <a href="../listagem_categoria/listagem_categoria.html">Categorias</a>
+      <a href="#perfil" class="ativo">Minha conta</a>
+    </nav>
+
+    <button type="button" class="botao botao-sair" id="botao-sair">
+      Sair da conta
+    </button>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="introducao">
+      <span class="etiqueta">ÁREA DO USUÁRIO</span>
+      <h1>Minha conta</h1>
+      <p>Gerencie seus dados e acompanhe suas atividades no Doa Tinga.</p>
+    </section>
+
+    <div class="layout-conta">
+
+      <!-- MENU LATERAL -->
+      <aside class="menu-conta">
+        <div class="resumo-usuario">
+          <div class="avatar" id="avatar">U</div>
+          <h2 id="nome-resumo">Usuário</h2>
+          <p id="email-resumo">usuario@exemplo.com</p>
+        </div>
+
+        <nav aria-label="Menu da conta">
+          <a href="#perfil" class="item-menu ativo">
+            <span>👤</span> Meu perfil
+          </a>
+          <a href="#meus-anuncios" class="item-menu">
+            <span>📦</span> Meus anúncios
+          </a>
+          <a href="#solicitacoes" class="item-menu">
+            <span>🤝</span> Minhas solicitações
+          </a>
+          <a href="#seguranca" class="item-menu">
+            <span>🔒</span> Segurança
+          </a>
+        </nav>
+      </aside>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <div class="painel">
+
+        <!-- PERFIL -->
+        <section class="cartao" id="perfil">
+          <div class="cabecalho-cartao">
+            <div>
+              <span class="subtitulo">INFORMAÇÕES PESSOAIS</span>
+              <h2>Meu perfil</h2>
+              <p>Confira e atualize seus dados cadastrais.</p>
+            </div>
+
+            <div class="icone-secao">👤</div>
+          </div>
+
+          <form id="form-perfil">
+
+            <div class="campo">
+              <label for="nome">Nome completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(51) 99999-9999"
+                autocomplete="tel"
+              >
+            </div>
+
+            <div class="campo">
+              <label for="cidade">Cidade</label>
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Digite sua cidade"
+                autocomplete="address-level2"
+              >
+            </div>
+
+            <div class="campo">
+              <label for="bairro">Bairro</label>
+              <input
+                type="text"
+                id="bairro"
+                name="bairro"
+                placeholder="Digite seu bairro"
+                autocomplete="address-level3"
+              >
+            </div>
+
+            <div class="campo">
+              <label for="sobre">Sobre mim</label>
+              <textarea
+                id="sobre"
+                name="sobre"
+                rows="3"
+                placeholder="Conte um pouco sobre você..."
+              ></textarea>
+            </div>
+
+            <div class="acoes-formulario">
+              <button type="submit" class="botao botao-principal">
+                Salvar alterações
+              </button>
+              <button type="reset" class="botao botao-secundario">
+                Cancelar
+              </button>
+            </div>
+
+            <p id="mensagem-perfil" class="mensagem" role="status"
+               aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- ANÚNCIOS -->
+        <section class="cartao" id="meus-anuncios">
+          <div class="cabecalho-cartao">
+            <div>
+              <span class="subtitulo">SUAS PUBLICAÇÕES</span>
+              <h2>Meus anúncios</h2>
+              <p>Acompanhe os itens que você disponibilizou.</p>
+            </div>
+            <div class="icone-secao">📦</div>
+          </div>
+
+          <div class="estado-vazio">
+            <span class="icone-vazio">📭</span>
+            <h3>Nenhum anúncio para exibir</h3>
+            <p>Quando você publicar uma doação, ela aparecerá aqui.</p>
+            <a href="../listagem_categoria/listagem_categoria.html"
+               class="botao botao-principal">
+              Explorar categorias
+            </a>
+          </div>
+        </section>
+
+        <!-- SOLICITAÇÕES -->
+        <section class="cartao" id="solicitacoes">
+          <div class="cabecalho-cartao">
+            <div>
+              <span class="subtitulo">ACOMPANHAMENTO</span>
+              <h2>Minhas solicitações</h2>
+              <p>Acompanhe os pedidos de doação que você realizar.</p>
+            </div>
+            <div class="icone-secao">🤝</div>
+          </div>
+
+          <div class="estado-vazio">
+            <span class="icone-vazio">📋</span>
+            <h3>Nenhuma solicitação para exibir</h3>
+            <p>Suas solicitações aparecerão aqui quando forem registradas.</p>
+            <a href="../listagem_categoria/listagem_categoria.html"
+               class="botao botao-principal">
+              Encontrar doações
+            </a>
+          </div>
+        </section>
+
+        <!-- SEGURANÇA -->
+        <section class="cartao" id="seguranca">
+          <div class="cabecalho-cartao">
+            <div>
+              <span class="subtitulo">PROTEÇÃO DA CONTA</span>
+              <h2>Segurança</h2>
+              <p>Gerencie o acesso à sua conta.</p>
+            </div>
+            <div class="icone-secao">🔒</div>
+          </div>
+
+          <div class="linha-seguranca">
+            <div>
+              <h3>Senha</h3>
+              <p>Altere sua senha para proteger sua conta.</p>
+            </div>
+            <button type="button" id="botao-senha"
+                    class="botao botao-secundario">
+              Alterar senha
+            </button>
+          </div>
+
+          <p id="mensagem-seguranca" class="mensagem"
+             role="status" aria-live="polite"></p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Doa Tinga — Compartilhar transforma.</p>
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>

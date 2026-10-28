@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Categorias</title>
+
+  <link rel="stylesheet" href="./listagem_categoria.css">
+  <script src="./listagem_categoria.js" defer></script>
+</head>
+<body>
+
+  <!-- CABEÇALHO SEM LOGOTIPO -->
+  <header class="cabecalho">
+
+    <nav class="menu">
+      <a href="listagem_categoria.html">Início</a>
+      <a href="listagem_categoria.html" class="ativo">Categorias</a>
+      <a href="#como-funciona">Como funciona</a>
+    </nav>
+
+    <a href="#categorias" class="botao botao-header">
+      Encontrar doações
+    </a>
+
+  </header>
+
+  <main>
+
+    <!-- DESTAQUE PRINCIPAL -->
+    <section class="hero">
+
+      <span class="etiqueta">DOAÇÃO QUE TRANSFORMA</span>
+
+      <h1>
+        O que você está<br>
+        <span>procurando hoje?</span>
+      </h1>
+
+      <p>
+        Explore as categorias, encontre o que precisa
+        e descubra como pequenos gestos podem fazer a diferença.
+      </p>
+
+      <a href="#categorias" class="botao botao-principal">
+        Explorar categorias ↓
+      </a>
+
+    </section>
+
+    <!-- LISTAGEM DE CATEGORIAS -->
+    <section class="secao-categorias" id="categorias">
+
+      <div class="titulo-secao">
+        <div>
+          <span class="subtitulo">ENCONTRE SUA CATEGORIA</span>
+
+          <h2>Todas as categorias</h2>
+
+          <p>Encontre itens disponíveis para doação.</p>
+        </div>
+
+        <span id="contador" class="contador"></span>
+      </div>
+
+      <!-- CAMPO DE PESQUISA -->
+      <div class="barra-pesquisa">
+
+        <span aria-hidden="true">⌕</span>
+
+        <input
+          type="search"
+          id="pesquisa"
+          placeholder="Buscar categoria..."
+          aria-label="Buscar categoria"
+        >
+
+      </div>
+
+      <!-- CARTÕES CRIADOS PELO JAVASCRIPT -->
+      <div id="lista-categorias" class="grade-categorias">
+      </div>
+
+      <!-- MENSAGEM QUANDO NÃO HOUVER RESULTADOS -->
+      <p id="mensagem-vazia" class="mensagem-vazia" hidden>
+        Nenhuma categoria encontrada. Tente outra pesquisa.
+      </p>
+
+      <p
+        id="mensagem-status"
+        class="mensagem-status"
+        role="status"
+        aria-live="polite">
+      </p>
+
+    </section>
+
+    <!-- CHAMADA PARA DOAÇÃO -->
+    <section class="chamada" id="como-funciona">
+
+      <div class="chamada-icone">♡</div>
+
+      <div>
+        <h2>Você tem algo para doar?</h2>
+
+        <p>
+          Um objeto sem uso para você pode ser muito importante
+          para outra pessoa.
+        </p>
+      </div>
+
+      <a href="#categorias" class="botao botao-claro">
+        Quero ajudar
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ SEM LOGOTIPO -->
+  <footer class="rodape">
+
+    <p>Compartilhar transforma. Juntos fazemos a diferença.</p>
+
+    <p>© 2026</p>
+
+  </footer>
+
+</body>
+</html>
+

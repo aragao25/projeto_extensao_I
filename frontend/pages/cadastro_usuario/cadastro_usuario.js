@@ -7,12 +7,12 @@ formulario.addEventListener('submit', async function(evento) {
         const dadosUsuario = {
             nome: document.getElementById('nome-completo').value,
             telefone: document.getElementById('telefone').value,
-            dataNascimento: document.getElementById('data-nascimento').value,
+            data_nascimento: document.getElementById('data-nascimento').value,
             email: document.getElementById('email').value,
-            senha: document.getElementById('senha').value
+            senha: document.getElementById('nova-senha').value
         }
 
-        const resposta = await fetch('url-do-seu-backend/cadastro', {
+        const resposta = await fetch('http://127.0.0.1:8000/usuarios/cadastro', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

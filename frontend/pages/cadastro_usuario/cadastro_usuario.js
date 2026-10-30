@@ -1,4 +1,16 @@
 const formulario = document.getElementById('cadastro-form');
+const modal = document.getElementById('modal-alerta');
+const textoAlerta = document.getElementById('texto-alerta');
+const botaoFecharModal = document.getElementById('botao-fechar-modal');
+
+function exibirMensagem (texto) {
+    textoAlerta.textContent = texto;
+    modal.classList.remove('oculto');
+}
+
+botaoFecharModal.onclick = () => {
+    modal.classList.add('oculto');
+}
 
 formulario.addEventListener('submit', async function(evento) {
     evento.preventDefault();
@@ -21,13 +33,27 @@ formulario.addEventListener('submit', async function(evento) {
         });
 
         if (resposta.ok) {
-            console.log("Cadastro realizado com sucesso!");
+            exibirMensagem("Cadastro realizado com sucesso!");
             formulario.reset();
+
+            botaoFecharModal.onclick = () => {
+                window.location.href = '../login/login.html';
+            };
         } else {
-            console.log("E-mail já existe.")
+            const dadosErro = await resposta.json()
+            exibirMensagem(`Atenção: ${dadosErro.detail}`)
+
+            botaoFecharModal.onclick = () => {
+                modal.classList.add('oculto');
+            };
         }
 
     } catch (erro) {
+        exibirMensagem("Erro de conexão. Tente novamente mais tarde.")
         console.error(`Erro crítico: ${erro}`)
+
+        botaoFecharModal.onclick = () => {
+                modal.classList.add('oculto');
+        };
     }
 });

@@ -11,3 +11,4 @@ node_modules/
 
 # Pastas
 venv/
+__pycache__/

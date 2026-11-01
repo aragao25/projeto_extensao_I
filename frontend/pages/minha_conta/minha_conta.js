@@ -1,3 +1,4 @@
+import { supabase } from "../../services/supabase-client.js";
 
 const formPerfil = document.getElementById("form-perfil");
 const mensagemPerfil = document.getElementById("mensagem-perfil");
@@ -127,12 +128,26 @@ document.getElementById("botao-senha").addEventListener("click", () => {
     "A alteração de senha precisa ser conectada ao sistema de autenticação.";
 });
 
-document.getElementById("botao-sair").addEventListener("click", () => {
+document.getElementById("botao-sair").addEventListener("click", async () => {
   const confirmar = window.confirm("Deseja sair da sua conta?");
 
   if (confirmar) {
-    window.alert(
-      "A saída da conta ainda precisa ser integrada ao sistema de autenticação."
-    );
+    try {
+      // 1. Executa o logout no Supabase (remove o token do local/session storage)
+      const { error } = await supabase.auth.signOut();
+
+      if (error) throw error;
+
+      // 2. Limpa os dados do perfil salvos localmente (opcional, dependendo da sua regra de negócio)
+      localStorage.removeItem("doaTingaPerfil");
+
+      // 3. Redireciona o usuário para a página de login ou home
+      window.alert("Você saiu da sua conta com sucesso!");
+      window.location.href = "../login/login.html"; // Altere para a sua página de destino
+      
+    } catch (erro) {
+      console.error("Erro ao sair:", erro.message);
+      window.alert("Não foi possível encerrar a sessão: " + erro.message);
+    }
   }
 });

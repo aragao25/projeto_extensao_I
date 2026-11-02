@@ -52,8 +52,5 @@ formulario.addEventListener('submit', async function(evento) {
         exibirMensagem("Erro de conexão. Tente novamente mais tarde.")
         console.error(`Erro crítico: ${erro}`)
 
-        botaoFecharModal.onclick = () => {
-                modal.classList.add('oculto');
-        };
     }
 });

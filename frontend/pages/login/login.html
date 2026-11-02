@@ -34,9 +34,9 @@
       <form class="tela-login__formulario" id="login-formulario">
         <!-- Campo Usuário -->
         <div class="label-campo">
-          <label for="usuario">Usuário</label>
+          <label for="usuario">E-mail</label>
           <input
-            type="text"
+            type="email"
             id="usuario"
             class="input-campo"
             placeholder="E-mail"
@@ -68,7 +68,8 @@
             >Esqueceu sua senha?</a
           >
         </div>
-
+        <!--Mensagens de erro-->
+        <p id="login-mensagem" class="tela-login__mensagem" role="alert" aria-live="polite"></p>
         <!-- Botão Enviar -->
         <button type="submit" class="botao-primario">Entrar</button>
       </form>
@@ -82,5 +83,6 @@
         >
       </p>
     </main>
+    <script type="module" src="./login.js"></script>
   </body>
 </html>

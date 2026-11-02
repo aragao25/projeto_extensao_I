@@ -1,4 +1,3 @@
-from fastapi import APIRouter
 from app.schemas import UsuarioCadastro
 from app.core.db import supabase
 from fastapi import APIRouter, HTTPException

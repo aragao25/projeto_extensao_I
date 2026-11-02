@@ -110,3 +110,25 @@ async def cancelar_anuncio(
         raise HTTPException(409, "Doação concluída não pode ser cancelada")
     await _aplicar_status(anuncio, "cancelado", db)
     await db.commit()
+
+# Rota de requisição anúncios do doador
+@router.get("/meus")
+async def meus_anuncios(
+    pessoa_id: uuid.UUID = Depends(usuario_atual),
+    db: AsyncSession = Depends(get_session),
+):
+    q = (
+        select(Anuncio, Item)
+        .join(Item, Item.id == Anuncio.item_id)
+        .where(Anuncio.doador_id == pessoa_id)      # só os do usuário logado
+        .order_by(Anuncio.publicado_em.desc())
+    )
+    linhas = (await db.execute(q)).all()
+    return [
+        {
+            "id": a.id, "titulo": a.titulo, "status": a.status, "cidade": a.cidade,
+            "categoria": i.categoria, "quantidade": i.quantidade,
+            "publicado_em": a.publicado_em,
+        }
+        for a, i in linhas
+    ]

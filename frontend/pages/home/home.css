@@ -62,6 +62,14 @@ button {
   display: none !important;
 }
 
+.botao-entrar {
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .cabecalho1 {
   display: flex;
   align-items: center;

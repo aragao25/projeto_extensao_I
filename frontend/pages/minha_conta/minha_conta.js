@@ -104,6 +104,27 @@ formPerfil.addEventListener("submit", async (evento) => {
       }
     }
 
+    await chamarApi("/me", {
+      method: "PATCH",
+      body: JSON.stringify({
+        nome: dados.nome,
+        telefone: dados.telefone || null,
+        cidade: dados.cidade || null,
+        bairro: dados.bairro || null,
+        sobre: dados.sobre || null
+      })
+    });
+
+    if (dados.email) {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user?.email !== dados.email) {
+        const { error } = await supabase.auth.updateUser({
+          email: dados.email
+        });
+        if (error) throw error;
+      }
+    }
+
     atualizarResumo(dados);
     mensagemPerfil.textContent =
       "Dados pessoais atualizados com sucesso.";

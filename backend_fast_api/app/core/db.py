@@ -1,10 +1,9 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from app.core.config import settings
-from supabase import create_client
+from supabase import create_client, Client
 
-supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
-
-print(f"DEBUG URL: '{settings.SUPABASE_URL}'")
+# print(f"DEBUG URL: '{settings.SUPABASE_URL}'")
+supabase: Client = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
 engine = create_async_engine(
     settings.DATABASE_URL, pool_size=5, max_overflow=5, pool_pre_ping=True)

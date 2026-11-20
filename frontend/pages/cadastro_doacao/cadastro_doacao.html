@@ -5,58 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Doação</title>
   <link rel="stylesheet" href="cadastro_doacao.css">
-  <script src="cadastro_doacao.js" defer></script>
+  <script src="cadastro_doacao.js" type="module" defer></script>
 </head>
 <body>
-
-  <!-- Tag semântica principal (W3C) -->
-  <main class="form-box">
-    <h1 class="form-title">Cadastro de Doação</h1>
-
-    <form class="form-doacao" id="form-doacao">
-      
-      <!-- Campo do Título da Doação -->
-      <div class="form-input__field">
-        <label for="titulo-doacao" class="sr-only">Título do anúncio</label>
-        <input 
-          type="text" 
-          id="titulo-doacao" 
-          class="form-doacao__input" 
-          placeholder="Título do anúncio" 
-          required 
-        >
+  <main class="conteudo">
+    <section class="cartao">
+      <div class="cabecalho-cartao">
+        <div>
+          <span class="subtitulo">NOVA PUBLICAÇÃO</span>
+          <h1>Cadastro de doação</h1>
+          <p>Informe os dados do item que você deseja compartilhar.</p>
+        </div>
+        <div class="icone-secao" aria-hidden="true">📦</div>
       </div>
 
-      <!-- Campo da Descrição do Item -->
-    <div class="form-input__field">
-            <label for="descricao-item" class="sr-only">Descrição do item</label>
-            <textarea
-                name="descricao-item" 
-                id="descricao-item" 
-                class="form-doacao__input" 
-                placeholder="Descreva condições e mais detalhes sobre o item a ser doado."
-            ></textarea>
-    </div>
+      <form class="form-doacao" id="form-doacao">
+        <div class="campo campo-inteiro">
+          <label for="titulo">Título do anúncio</label>
+          <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            placeholder="Ex.: Mesa de estudo"
+            minlength="3"
+            maxlength="120"
+            required
+          >
+        </div>
 
-    <!-- Campo de Anexo de Imagens do Item -->
-     <div class="form-input__field">
-        <label for="imagens-do-item" class="sr-only"></label>
-        <input type="file" id="imagens" name="imagens" accept="image/*" multiple>
-        <div id="preview-container"></div>
-     </div>
+        <div class="campo campo-inteiro">
+          <label for="descricao">Descrição do item</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            rows="4"
+            maxlength="2000"
+            placeholder="Descreva as condições e os detalhes do item."
+          ></textarea>
+        </div>
 
-    <!-- Opções -->
-      <div class="tela-login__opcoes">
-      </div>
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <input
+            type="text"
+            id="categoria"
+            name="categoria"
+            placeholder="Ex.: Móveis"
+            minlength="2"
+            maxlength="60"
+            required
+          >
+        </div>
 
-      <!-- Botão Enviar -->
-      <button type="submit" class="form-doacao__button">Publicar</button>
+        <div class="campo">
+          <label for="estado-conservacao">Estado de conservação</label>
+          <select id="estado-conservacao" name="estado_conservacao" required>
+            <option value="">Selecione</option>
+            <option value="novo">Novo</option>
+            <option value="bom">Bom</option>
+            <option value="regular">Regular</option>
+          </select>
+        </div>
 
-    </form>
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            placeholder="Digite a cidade"
+            minlength="2"
+            maxlength="80"
+            required
+          >
+        </div>
 
-    <p class="tela-login__footer">
-    </p>
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input
+            type="text"
+            id="bairro"
+            name="bairro"
+            placeholder="Digite o bairro"
+            maxlength="80"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="quantidade">Quantidade</label>
+          <input
+            type="number"
+            id="quantidade"
+            name="quantidade"
+            min="1"
+            max="1000"
+            value="1"
+            required
+          >
+        </div>
+
+        <div class="campo campo-inteiro">
+          <label for="imagens">Fotos do item</label>
+          <input
+            type="file"
+            id="imagens"
+            name="imagens"
+            accept="image/*"
+            multiple
+          >
+          <div id="preview-container" class="preview-container"></div>
+        </div>
+
+        <div class="acoes-formulario">
+          <button type="submit" class="botao botao-principal">
+            Publicar doação
+          </button>
+          <button type="reset" class="botao botao-secundario">
+            Cancelar
+          </button>
+        </div>
+
+        <p id="mensagem-doacao" class="mensagem" role="status"
+           aria-live="polite"></p>
+      </form>
+    </section>
   </main>
-
 </body>
 </html>

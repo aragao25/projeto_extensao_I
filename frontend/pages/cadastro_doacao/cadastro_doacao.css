@@ -1,160 +1,286 @@
-/* ==========================================================================
-   1. Google Style Guide & Reset
-   ========================================================================== */
 * {
-    box-sizing: border-box; /* Garante que o padding e as bordas não aumentem o tamanho total definido para o elemento. */
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde-escuro: #023110;
+  --verde-vivo: #05a828;
+  --branco: #ffffff;
+  --vidro: rgba(255, 255, 255, 0.10);
+  --vidro-hover: rgba(255, 255, 255, 0.18);
+  --borda: rgba(255, 255, 255, 0.25);
+  --texto-suave: rgba(255, 255, 255, 0.82);
+  --sombra: rgba(0, 0, 0, 0.20);
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background: linear-gradient(135deg, #023110 0%, #05a828 100%); /* Cria o fundo gradiente inclinado a 135 graus. */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #ffffff;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--verde-escuro) 0%,
+    var(--verde-vivo) 100%
+  );
+  background-attachment: fixed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  color: var(--branco);
+  line-height: 1.6;
 }
-input, textarea, select, button {
+
+input,
+textarea,
+select,
+button {
   font: inherit;
 }
 
-/* Acessibilidade: Oculta elementos visualmente mantendo a leitura por leitores de tela */
-.sr-only {
-    position: absolute; /* Remove o elemento do fluxo visual normal da página. */
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px; /* Elimina recuos e empurra esse pixel para fora da tela. */
-    overflow: hidden; /* Esconde o conteúdo que transbordar. */
-    clip: rect(0, 0, 0, 0); /* Recorta o elemento tornando-o 100% invisível. */
-    white-space: nowrap;
-    border: 0;
+button {
+  cursor: pointer;
 }
 
-/* ==========================================================================
-   2. Metodologia BEM: Bloco Principal
-   ========================================================================== */
-.form-box {
-    display: flex; /* Definição de display flex para adaptação da tela quando houver maior número de campos/inputs*/
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 70%;
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.1); /* Fundo branco com 10% de opacidade (semitransparente). */
-    backdrop-filter: blur(10px); /* Aplica o efeito de vidro fosco desfocando o fundo atrás do cartão. */
-    border-radius: 20px; /* Arredonda os cantos da caixa. */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Aplica uma sombra suave abaixo do cartão. */
+.conteudo {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
-.form-title {
-    margin-bottom: 20px;
-    font-size: 1.6rem; /* Define o tamanho da fonte proporcional à raiz. */
-    font-weight: 600; /* Torna o título semi-negrito. */
+.cartao {
+  padding: 28px;
+  background: var(--vidro);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--sombra);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* ==========================================================================
-   3. Elementos do Formulário (.login-card__*)
-   ========================================================================== */
-.form-input__field {
-    margin-bottom: 12px;
+.cabecalho-cartao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.form-doacao__input {
-    width: 80%;
-    padding: 12px 16px;
-    border: 1px solid transparent; /* Reserva uma borda invisível para evitar que o layout "pule" ao clicar. */
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    font-size: 14px;
-    outline: none; /* Remove a borda azul/preta nativa dos navegadores ao selecionar o campo. */
-    transition: border-color 0.2s ease, background-color 0.2s ease; /* Anima suavemente as trocas de cor ao clicar. */
+.subtitulo {
+  color: #b7ffc5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
 }
 
-.form-doacao__input::placeholder, #descricao-item::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Transparência de 70% no texto do placeholder. */
+.cabecalho-cartao h1 {
+  margin: 5px 0;
+  font-size: 24px;
+  line-height: 1.3;
 }
 
-/* Acessibilidade: Destaque de foco ao navegar por TECLA TAB */
-.form-doacao__input:focus {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: #ffffff;
+.cabecalho-cartao p {
+  color: var(--texto-suave);
+  font-size: 14px;
 }
 
-
-/* Anexar Imagens do item */
-
-/* Container de opções (Checkbox e Esqueci minha senha) */
-/* .tela-login__opcoes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 11px;
-} */
-
-/* .tela-login__checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 5px; 
-    cursor: pointer; 
-    white-space: nowrap;
-} */
-
-/* .tela-login__checkbox {
-    margin-left: 5px;
-    cursor: pointer;
-    accent-color: #023110; 
-} */
-
-/* Botão de envio */
-.form-doacao__button {
-    width: 15%;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    background: #ffffff;
-    color: #023110;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.1s ease; /* Anima as interações de passar o mouse e clicar. */
+.icone-secao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: var(--vidro);
+  font-size: 23px;
 }
 
-.tela-login__button:hover {
-    opacity: 0.9; /* Deixa o botão 10% mais transparente quando o mouse passa por cima. */
+.form-doacao {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.tela-login__button:active {
-    transform: scale(0.98); /* Dá um efeito tátil encolhendo o botão 2% no momento exato do clique. */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
 }
 
-/* ==========================================================================
-   4. Modificadores e Links (.login-card__link--*)
-   ========================================================================== */
-.tela-login__link {
-    color: #ffffff;
-    text-decoration: none;
-    white-space: nowrap;
+.campo-inteiro {
+  grid-column: 1 / -1;
 }
 
-.tela-login__link--esqueceu {
-    margin-right: 5px;
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.tela-login__link--esqueceu,
-.tela-login__link--registro {
-    text-decoration: underline;
+.campo input,
+.campo textarea,
+.campo select {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 15px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--branco);
+  font-size: 14px;
+  transition: 0.2s ease;
 }
 
-.tela-login__link:hover {
-    color: #dddddd;
+.campo select {
+  cursor: pointer;
 }
 
-.tela-login__footer {
-    margin-top: 15px;
-    font-size: 12px;
+.campo select option {
+  color: #173b22;
+  background: var(--branco);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: var(--branco);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.campo input[type="file"] {
+  padding: 9px;
+  cursor: pointer;
+}
+
+.campo input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--branco);
+  color: var(--verde-escuro);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.preview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.preview-item {
+  display: grid;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.preview-item img {
+  width: 100%;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.preview-item button {
+  padding: 7px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
+  font-size: 12px;
+}
+
+.acoes-formulario {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 11px 20px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.botao:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.botao-principal {
+  background: var(--branco);
+  color: var(--verde-escuro);
+}
+
+.botao-secundario {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
+  border-color: var(--borda);
+}
+
+.mensagem {
+  grid-column: 1 / -1;
+  min-height: 20px;
+  color: #d5ffdc;
+  font-size: 13px;
+}
+
+.botao:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 4px;
+}
+
+@media (max-width: 520px) {
+  .conteudo {
+    width: 92%;
+    padding: 35px 0;
+  }
+
+  .cartao {
+    padding: 20px 16px;
+  }
+
+  .cabecalho-cartao h1 {
+    font-size: 21px;
+  }
+
+  .form-doacao {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-inteiro,
+  .acoes-formulario,
+  .mensagem {
+    grid-column: 1;
+  }
+
+  .acoes-formulario .botao {
+    width: 100%;
+  }
 }

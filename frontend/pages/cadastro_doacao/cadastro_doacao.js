@@ -1,15 +1,16 @@
-/* Preview das imagens anexadas */
+import { chamarApi } from "../../services/api.js";
 
 const imagensInput = document.getElementById('imagens');
 const previewContainer = document.getElementById('preview-container');
+const formulario = document.getElementById('form-doacao');
+const mensagem = document.getElementById('mensagem-doacao');
 let arquivosSelecionados = [];
 
 imagensInput.addEventListener('change', (e) => {
   const arquivos = Array.from(e.target.files);
-  
-  // valida tamanho/tipo antes de aceitar
+
   const validos = arquivos.filter(arquivo => {
-    const tamanhoOk = arquivo.size <= 5 * 1024 * 1024; // 5MB
+    const tamanhoOk = arquivo.size <= 5 * 1024 * 1024;
     const tipoOk = arquivo.type.startsWith('image/');
     return tamanhoOk && tipoOk;
   });
@@ -20,51 +21,55 @@ imagensInput.addEventListener('change', (e) => {
 
 function renderPreview() {
   previewContainer.innerHTML = '';
-  
+
   arquivosSelecionados.forEach((arquivo, index) => {
     const url = URL.createObjectURL(arquivo);
     const div = document.createElement('div');
     div.className = 'preview-item';
-    div.innerHTML = `
-      <img src="${url}" width="100">
-      <button type="button" data-index="${index}">Remover</button>
-    `;
-    div.querySelector('button').addEventListener('click', () => {
+
+    const imagem = document.createElement('img');
+    imagem.src = url;
+    imagem.alt = `Prévia de ${arquivo.name}`;
+
+    const botaoRemover = document.createElement('button');
+    botaoRemover.type = 'button';
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.addEventListener('click', () => {
+      URL.revokeObjectURL(url);
       arquivosSelecionados.splice(index, 1);
       renderPreview();
     });
+
+    div.append(imagem, botaoRemover);
     previewContainer.appendChild(div);
   });
 }
 
-/* Envio dos arquivos com Formdata */
-
-document.getElementById('form-doacao').addEventListener('submit', async (e) => {
+formulario.addEventListener('submit', async (e) => {
   e.preventDefault();
+  mensagem.textContent = '';
 
-  const formData = new FormData();
-  formData.append('titulo', document.getElementById('titulo').value);
-  formData.append('descricao', document.getElementById('descricao').value);
-  formData.append('keywords', keywords.join(','));
-
-  arquivosSelecionados.forEach((arquivo) => {
-    formData.append('imagens', arquivo); // mesmo nome pra cada arquivo = array no backend
-  });
+  const dados = {
+    titulo: document.getElementById('titulo').value.trim(),
+    descricao: document.getElementById('descricao').value.trim() || null,
+    cidade: document.getElementById('cidade').value.trim(),
+    bairro: document.getElementById('bairro').value.trim() || null,
+    categoria: document.getElementById('categoria').value.trim(),
+    estado_conservacao: document.getElementById('estado-conservacao').value,
+    quantidade: Number(document.getElementById('quantidade').value)
+  };
 
   try {
-    const response = await fetch('/api/doacoes', {
+    await chamarApi('/anuncios', {
       method: 'POST',
-      body: formData
-      // NÃO defina Content-Type manualmente — o browser define
-      // automaticamente o multipart/form-data com o boundary correto
+      body: JSON.stringify(dados)
     });
 
-    if (!response.ok) throw new Error('Erro ao publicar doação');
-
-    const resultado = await response.json();
-    console.log('Doação criada:', resultado);
-
+    mensagem.textContent = 'Doação publicada com sucesso!';
+    formulario.reset();
+    arquivosSelecionados = [];
+    renderPreview();
   } catch (erro) {
-    console.error(erro);
+    mensagem.textContent = erro.message;
   }
 });

@@ -18,7 +18,15 @@ async def meu_perfil(
     pessoa = await db.get(Pessoa, pessoa_id)
     if not pessoa:
         raise HTTPException(404, "Perfil não encontrado")
-    return {"id": pessoa.id, "nome": pessoa.nome, "email": pessoa.email, "telefone": pessoa.telefone}
+    return {
+        "id": pessoa.id,
+        "nome": pessoa.nome,
+        "email": pessoa.email,
+        "telefone": pessoa.telefone,
+        "cidade": pessoa.cidade,
+        "bairro": pessoa.bairro,
+        "sobre": pessoa.sobre,
+    }
 
 # app/routers/me.py (acrescente PessoaUpdate ao import de app.schemas)
 @router.patch("/me")
@@ -33,4 +41,13 @@ async def atualizar_perfil(
     for campo, valor in dados.model_dump(exclude_none=True).items():
         setattr(pessoa, campo, valor)
     await db.commit()
-    return {"id": pessoa.id, "nome": pessoa.nome, "email": pessoa.email, "telefone": pessoa.telefone}
+    await db.refresh(pessoa)
+    return {
+        "id": pessoa.id,
+        "nome": pessoa.nome,
+        "email": pessoa.email,
+        "telefone": pessoa.telefone,
+        "cidade": pessoa.cidade,
+        "bairro": pessoa.bairro,
+        "sobre": pessoa.sobre,
+    }

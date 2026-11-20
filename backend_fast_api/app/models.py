@@ -12,6 +12,9 @@ class Pessoa(Base):
     nome: Mapped[str] = mapped_column(String(120))
     email: Mapped[str] = mapped_column(String(255), unique=True)
     telefone: Mapped[str | None] = mapped_column(String(20))
+    cidade: Mapped[str | None] = mapped_column(String(80))
+    bairro: Mapped[str | None] = mapped_column(String(80))
+    sobre: Mapped[str | None] = mapped_column(Text)
     data_nascimento: Mapped[date | None]
     criado_em: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 

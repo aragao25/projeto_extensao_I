@@ -361,6 +361,50 @@ button {
   font-size: 14px;
 }
 
+.lista-conta {
+  display: grid;
+  gap: 12px;
+}
+
+.item-conta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 18px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.item-conta h3 {
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.item-conta p {
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.item-conta-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.tag-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: var(--vidro);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
 .linha-seguranca {
   display: flex;
   justify-content: space-between;
@@ -476,6 +520,10 @@ a:focus-visible {
   .linha-seguranca {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .item-conta {
+    grid-template-columns: 1fr;
   }
 }
 

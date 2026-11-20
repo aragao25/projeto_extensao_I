@@ -1,6 +1,6 @@
 import { supabase } from "./supabase-client.js";
 
-const PAGINA_LOGIN = "pages/login/login.html";    // a página onde está o seu formulário de login
+const PAGINA_LOGIN = "../login/login.html";
 
 export async function exigirLogin() {
   const { data: { session } } = await supabase.auth.getSession();

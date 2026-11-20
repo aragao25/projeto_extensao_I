@@ -10,6 +10,9 @@ class PessoaUpdate(BaseModel):
     nome: str | None = Field(default=None, min_length=2, max_length=120)
     # DDD + número, só dígitos
     telefone: str | None = Field(default=None, pattern=r"^\d{10,11}$")
+    cidade: str | None = Field(default=None, max_length=80)
+    bairro: str | None = Field(default=None, max_length=80)
+    sobre: str | None = Field(default=None, max_length=1000)
     data_nascimento: date | None = None
 
 

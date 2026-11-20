@@ -12,7 +12,7 @@
 
   <header class="cabecalho">
     <nav class="menu" aria-label="Navegação principal">
-      <a href="minha_conta.html">Início</a>
+      <a href="../home/home.html">Início</a>
       <a href="../listagem_categoria/listagem_categoria.html">Categorias</a>
       <a href="#perfil" class="ativo">Minha conta</a>
     </nav>
@@ -165,14 +165,16 @@
             <div class="icone-secao">📦</div>
           </div>
 
-          <div class="estado-vazio">
-            <span class="icone-vazio">📭</span>
-            <h3>Nenhum anúncio para exibir</h3>
-            <p>Quando você publicar uma doação, ela aparecerá aqui.</p>
-            <a href="../listagem_categoria/listagem_categoria.html"
-               class="botao botao-principal">
-              Explorar categorias
-            </a>
+          <div id="lista-meus-anuncios" class="lista-conta" aria-live="polite">
+            <div class="estado-vazio">
+              <span class="icone-vazio">📭</span>
+              <h3>Nenhum anúncio para exibir</h3>
+              <p>Quando você publicar uma doação, ela aparecerá aqui.</p>
+              <a href="../cadastro_doacao/cadastro_doacao.html"
+                 class="botao botao-principal">
+                Publicar doação
+              </a>
+            </div>
           </div>
         </section>
 
@@ -187,14 +189,16 @@
             <div class="icone-secao">🤝</div>
           </div>
 
-          <div class="estado-vazio">
-            <span class="icone-vazio">📋</span>
-            <h3>Nenhuma solicitação para exibir</h3>
-            <p>Suas solicitações aparecerão aqui quando forem registradas.</p>
-            <a href="../listagem_categoria/listagem_categoria.html"
-               class="botao botao-principal">
-              Encontrar doações
-            </a>
+          <div id="lista-minhas-solicitacoes" class="lista-conta" aria-live="polite">
+            <div class="estado-vazio">
+              <span class="icone-vazio">📋</span>
+              <h3>Nenhuma solicitação para exibir</h3>
+              <p>Suas solicitações aparecerão aqui quando forem registradas.</p>
+              <a href="../listagem_categoria/listagem_categoria.html"
+                 class="botao botao-principal">
+                Encontrar doações
+              </a>
+            </div>
           </div>
         </section>
 

@@ -49,7 +49,7 @@ async function carregarPerfil() {
   try {
     const perfil = await chamarApi("/me");
     const dadosSalvos = JSON.parse(
-      localStorage.getItem("doaTingaPerfil") || "{}"
+      localStorage.getItem("doaFacilPerfil") || "{}"
     );
 
     preencherFormulario({
@@ -63,7 +63,7 @@ async function carregarPerfil() {
   } catch (erro) {
     try {
       const dadosSalvos = JSON.parse(
-        localStorage.getItem("doaTingaPerfil") || "{}"
+        localStorage.getItem("doaFacilPerfil") || "{}"
       );
       preencherFormulario(dadosSalvos);
     } catch {
@@ -81,7 +81,7 @@ formPerfil.addEventListener("submit", async (evento) => {
   mensagemPerfil.textContent = "";
 
   try {
-    localStorage.setItem("doaTingaPerfil", JSON.stringify(dados));
+    localStorage.setItem("doaFacilPerfil", JSON.stringify(dados));
 
     await chamarApi("/me", {
       method: "PATCH",
@@ -301,7 +301,7 @@ document.getElementById("botao-sair").addEventListener("click", async () => {
       if (error) throw error;
 
       // 2. Limpa os dados do perfil salvos localmente (opcional, dependendo da sua regra de negócio)
-      localStorage.removeItem("doaTingaPerfil");
+      localStorage.removeItem("doaFacilPerfil");
 
       // 3. Redireciona o usuário para a página de login ou home
       window.alert("Você saiu da sua conta com sucesso!");

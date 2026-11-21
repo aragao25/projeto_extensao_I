@@ -1,4 +1,4 @@
-import { supabase } from "supabase-client.js";
+import { supabase } from "./supabase-client.js";
 
 const API_URL = "http://localhost:8000";    // em produção, o endereço do FastAPI hospedado
 
